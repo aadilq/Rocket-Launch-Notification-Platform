@@ -146,12 +146,12 @@ RocketLaunch.Live API
 - [✅] Create GitHub repo (`rocket-launch-platform`)
 - [✅] Clone repo locally, set `main` as default branch
 - [✅] Add `.gitignore` (Python, Node, React, Docker, env files)
-- [ ] Push initial commit with just `CLAUDE.md` and `.gitignore`
-- [ ] Establish branch convention: `main` for stable, `feature/<name>` for work-in-progress
+- [✅] Push initial commit with just `CLAUDE.md` and `.gitignore`
+- [✅] Establish branch convention: `main` for stable, `feature/<name>` for work-in-progress
 
 #### 1.2 Project Scaffolding
-- [ ] Create top-level directory structure (`frontend/`, `backend-api/`, `notification-service/`, `ingestion-service/`, `api-gateway/`, `k8s/`, `jenkins/`)
-- [ ] Add placeholder `README.md` in each service folder
+- [✅] Create top-level directory structure (`frontend/`, `backend-api/`, `notification-service/`, `ingestion-service/`, `api-gateway/`, `k8s/`, `jenkins/`)
+- [✅] Add placeholder `README.md` in each service folder
 
 #### 1.3 Backend API (FastAPI)
 - [ ] Initialize FastAPI project with `requirements.txt`
