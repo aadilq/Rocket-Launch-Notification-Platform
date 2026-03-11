@@ -154,7 +154,7 @@ RocketLaunch.Live API
 - [✅] Add placeholder `README.md` in each service folder
 
 #### 1.3 Backend API (FastAPI)
-- [ ] Initialize FastAPI project with `requirements.txt`
+- [✅] Initialize FastAPI project with `requirements.txt`
 - [ ] Create basic app entry point (`main.py`) with a health check route (`GET /health`)
 - [ ] Set up PostgreSQL connection with SQLAlchemy
 - [ ] Define initial DB models: `User`, `Launch`, `Subscription`
