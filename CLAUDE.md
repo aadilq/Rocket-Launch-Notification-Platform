@@ -156,8 +156,8 @@ RocketLaunch.Live API
 #### 1.3 Backend API (FastAPI)
 - [✅] Initialize FastAPI project with `requirements.txt`
 - [✅] Create basic app entry point (`main.py`) with a health check route (`GET /health`)
-- [ ] Set up PostgreSQL connection with SQLAlchemy
-- [ ] Define initial DB models: `User`, `Launch`, `Subscription`
+- [✅] Set up PostgreSQL connection with SQLAlchemy
+- [✅] Define initial DB models: `User`, `Launch`, `Subscription`
 - [ ] Write `Dockerfile` for backend-api
 - [ ] Test image builds and runs locally
 
@@ -266,3 +266,4 @@ RocketLaunch.Live API
 - [ ] Launch countdown timers on dashboard (live, client-side)
 - [ ] Notification history/log page per user
 - [ ] UI cleanup — loading states, error handling, responsive layout
+
