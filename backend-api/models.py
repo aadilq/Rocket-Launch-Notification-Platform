@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey
 from sqlalchemy.sql import func
 from database import Base
+from sqlalchemy.orm import relationship
 
 class User(Base):
     __tablename__ = 'users'
@@ -11,6 +12,7 @@ class User(Base):
     phone_number = Column(String(20), nullable=True)
     password_hash = Column(String(255), nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
+    subscriptions = relationship('Subscription', back_populates='user')
 
 class Launch(Base):
     __tablename__ = 'launches'
@@ -22,6 +24,7 @@ class Launch(Base):
     status = Column(String(50), nullable=False)
     net = Column(DateTime(timezone=True), nullable=True)
     updated_at = Column(DateTime(timezone=True), onupdate=func.now(), server_default=func.now())
+    subscriptions = relationship('Subscription', back_populates='launch')
 
 
 class Subscription(Base):
@@ -34,6 +37,8 @@ class Subscription(Base):
     notify_email = Column(Boolean, default=True, nullable=False)
     notify_phone = Column(Boolean, default=False, nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
+    user = relationship('User', back_populates='subscriptions')
+    launch = relationship('Launch', back_populates="subscriptions")
 
     
 
