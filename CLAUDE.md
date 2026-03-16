@@ -158,8 +158,8 @@ RocketLaunch.Live API
 - [✅] Create basic app entry point (`main.py`) with a health check route (`GET /health`)
 - [✅] Set up PostgreSQL connection with SQLAlchemy
 - [✅] Define initial DB models: `User`, `Launch`, `Subscription`
-- [ ] Write `Dockerfile` for backend-api
-- [ ] Test image builds and runs locally
+- [✅] Write `Dockerfile` for backend-api
+- [✅] Test image builds and runs locally
 
 #### 1.4 Frontend (React + Tailwind)
 - [ ] Scaffold React app with Vite
