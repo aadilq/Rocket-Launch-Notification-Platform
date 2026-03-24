@@ -1,16 +1,17 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  ---                                                                               
+  Home                                                                              
+  The landing page. Gives the user an overview of the platform — a hero section with
+   a title, short description, and a call to action like "Browse Launches" or "Sign
+  Up". Nothing dynamic yet, just a welcoming entry point.                           
+                  
+  ---                                                                               
+  Launches        
+  The main page of the app. Displays a list of upcoming rocket launches pulled from
+  the backend API — launch name, agency, status, and scheduled date. Eventually
+  users will be able to click a launch and subscribe to it from here.               
+   
+  ---                                                                               
+  Subscribe       
+  Where users manage their notification preferences — which launches or agencies    
+  they're subscribed to, whether they want email or SMS alerts, and the ability to
+  unsubscribe. For now it'll just be a skeleton with placeholder UI.    s

@@ -164,7 +164,7 @@ RocketLaunch.Live API
 #### 1.4 Frontend (React + Tailwind)
 - [✅] Scaffold React app with Vite
 - [✅] Install and configure Tailwind CSS
-- [ ] Create skeleton pages: Home, Launches, Subscribe
+- [✅] Create skeleton pages: Home, Launches, Subscribe
 - [ ] Add basic Navbar component
 - [ ] Write `Dockerfile` for frontend
 - [ ] Test image builds and runs locally
