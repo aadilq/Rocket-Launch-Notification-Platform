@@ -14,4 +14,25 @@
   Subscribe       
   Where users manage their notification preferences — which launches or agencies    
   they're subscribed to, whether they want email or SMS alerts, and the ability to
-  unsubscribe. For now it'll just be a skeleton with placeholder UI.    s
+  unsubscribe. For now it'll just be a skeleton with placeholder UI.
+
+  Browser requests localhost:80
+          │
+          ▼
+  Nginx receives the request
+          │
+          ▼
+  Looks in /usr/share/nginx/html for the files                                     
+          │
+          ▼                                                                        
+  Finds index.html and sends it back to the browser
+          │                                                                        
+          ▼
+  Browser loads your React app                                                     
+                                                                                   
+  /usr/share/nginx/html is just the default folder Nginx looks in when serving     
+  files.
+
+  "Test the image builds / create an image" - docker build -t frontend_nasa .
+  ""runs locally / run an instance of that image"" - docker run -p 80:80 frontend-nasa
+

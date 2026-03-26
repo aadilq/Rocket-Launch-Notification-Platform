@@ -165,9 +165,9 @@ RocketLaunch.Live API
 - [✅] Scaffold React app with Vite
 - [✅] Install and configure Tailwind CSS
 - [✅] Create skeleton pages: Home, Launches, Subscribe
-- [ ] Add basic Navbar component
-- [ ] Write `Dockerfile` for frontend
-- [ ] Test image builds and runs locally
+- [✅] Add basic Navbar component
+- [✅] Write `Dockerfile` for frontend
+- [✅] Test image builds and runs locally
 
 #### 1.5 API Gateway (Nginx)
 - [ ] Write `nginx.conf` to route `/api/*` to backend-api and `/` to frontend
