@@ -31,8 +31,8 @@ class Subscription(Base):
     __tablename__ = 'subscriptions'
 
     id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey('User.id'), nullable=False)
-    launch_id = Column(Integer, ForeignKey('Launch.id'), nullable=True)
+    user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
+    launch_id = Column(Integer, ForeignKey('launches.id'), nullable=True)
     agency = Column(String(100), nullable=True)
     notify_email = Column(Boolean, default=True, nullable=False)
     notify_phone = Column(Boolean, default=False, nullable=False)

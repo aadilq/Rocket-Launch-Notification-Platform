@@ -1,0 +1,39 @@
+services:
+  frontend:
+    build: ./frontend/frontend-NASA_proj
+    ports:
+      - "5173:80" 
+
+  backend-api:
+    build: ./backend-api
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@postgres:5432/rocketlaunch
+    depends_on:
+      - postgres
+
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - backend-api
+
+  postgres:
+    image: postgres:15
+    environment: 
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=rocketlaunch
+    volumes:
+    - postgres_data:/var/lib/postgresql/data
+  
+volumes:
+  postgres_data:
+    
+
+
+
+  
