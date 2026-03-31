@@ -170,8 +170,8 @@ RocketLaunch.Live API
 - [✅] Test image builds and runs locally
 
 #### 1.5 API Gateway (Nginx)
-- [ ] Write `nginx.conf` to route `/api/*` to backend-api and `/` to frontend
-- [ ] Write `Dockerfile` for api-gateway
+- [✅] Write `nginx.conf` to route `/api/*` to backend-api and `/` to frontend
+- [✅] Write `Dockerfile` for api-gateway
 - [ ] Test routing locally
 
 #### 1.6 Docker Compose
