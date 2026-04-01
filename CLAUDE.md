@@ -176,9 +176,9 @@ RocketLaunch.Live API
 
 #### 1.6 Docker Compose
 - [✅] Write `docker-compose.yml` wiring all services: frontend, backend-api, api-gateway, PostgreSQL
-- [ ] Add environment variable support via `.env` file
-- [ ] Verify all containers start and communicate (`docker-compose up`)
-- [ ] Confirm health check route is reachable through Nginx
+- [✅] Add environment variable support via `.env` file
+- [✅] Verify all containers start and communicate (`docker-compose up`)
+- [✅] Confirm health check route is reachable through Nginx
 
 ---
 
