@@ -21,8 +21,7 @@ A microservices-based platform where users subscribe to upcoming rocket launches
 | CI/CD | Jenkins |
 
 **External APIs:**
-- RocketLaunch.Live (free tier)
-- The Space Devs Launch Library 2
+- The Space Devs Launch Library 2 (free, no API key required)
 
 **Notification Providers:**
 - Email: SendGrid
@@ -185,7 +184,7 @@ RocketLaunch.Live API
 ### Phase 2 — Core Features
 
 #### 2.1 Data Ingestion Service
-- [ ] Initialize Python project with `requirements.txt`
+- [✅] Initialize Python project with `requirements.txt`
 - [ ] Write scheduler (APScheduler or cron) to poll RocketLaunch.Live API every 15 minutes
 - [ ] Parse and normalize launch data
 - [ ] Persist launches to PostgreSQL via backend-api or direct DB write
