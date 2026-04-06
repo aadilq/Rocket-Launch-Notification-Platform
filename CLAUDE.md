@@ -185,10 +185,10 @@ RocketLaunch.Live API
 
 #### 2.1 Data Ingestion Service
 - [✅] Initialize Python project with `requirements.txt`
-- [ ] Write scheduler (APScheduler or cron) to poll RocketLaunch.Live API every 15 minutes
-- [ ] Parse and normalize launch data
-- [ ] Persist launches to PostgreSQL via backend-api or direct DB write
-- [ ] Write `Dockerfile` for ingestion-service
+- [✅] Write scheduler (APScheduler or cron) to poll RocketLaunch.Live API every 15 minutes
+- [✅] Parse and normalize launch data
+- [✅] Persist launches to PostgreSQL via backend-api or direct DB write
+- [✅] Write `Dockerfile` for ingestion-service
 - [ ] Add to `docker-compose.yml`
 
 #### 2.2 RabbitMQ Integration
