@@ -189,12 +189,12 @@ RocketLaunch.Live API
 - [✅] Parse and normalize launch data
 - [✅] Persist launches to PostgreSQL via backend-api or direct DB write
 - [✅] Write `Dockerfile` for ingestion-service
-- [ ] Add to `docker-compose.yml`
+- [✅] Add to `docker-compose.yml`
 
 #### 2.2 RabbitMQ Integration
-- [ ] Add RabbitMQ to `docker-compose.yml`
-- [ ] Connect ingestion-service as a producer — publish launch status change events to a queue
-- [ ] Connect notification-service as a consumer — listen for events on the queue
+- [✅] Add RabbitMQ to `docker-compose.yml`
+- [✅] Connect ingestion-service as a producer — publish launch status change events to a queue
+- [✅] Connect notification-service as a consumer — listen for events on the queue
 
 #### 2.3 Backend API — User & Subscription Endpoints
 - [ ] `POST /auth/register` — user signup
