@@ -30,7 +30,7 @@ def create_access_token(data: dict):
     data_to_encode = data.copy()
     expire = datetime.utc()+ timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     data_to_encode.update({"exp": expire})
-    return jwt.encode(data_to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    return jwt.encode(data_to_encode, SECRET_KEY, algorithms=ALGORITHM)
 
 @router.post("/auth/register")
 def register(request: RegisterRequest, db: Session = Depends(get_db)):
@@ -61,4 +61,5 @@ def login(request: LoginRequest, db: Session = Depends(get_db)):
     
     token = create_access_token({"sub": str(user.id)})
     return {"access token": token, "token_type": "bearer"}
+
 

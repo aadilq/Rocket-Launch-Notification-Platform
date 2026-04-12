@@ -197,9 +197,9 @@ RocketLaunch.Live API
 - [✅] Connect notification-service as a consumer — listen for events on the queue
 
 #### 2.3 Backend API — User & Subscription Endpoints
-- [ ] `POST /auth/register` — user signup
-- [ ] `POST /auth/login` — user login (JWT)
-- [ ] `GET /launches` — list upcoming launches
+- [✅] `POST /auth/register` — user signup
+- [✅] `POST /auth/login` — user login (JWT)
+- [✅] `GET /launches` — list upcoming launches
 - [ ] `POST /subscriptions` — subscribe to a launch or agency
 - [ ] `DELETE /subscriptions/:id` — unsubscribe
 
