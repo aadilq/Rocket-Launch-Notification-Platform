@@ -63,3 +63,16 @@ def create_subscription(request: SubscriptionRequest, user_id: int = Depends(get
     db.commit()
     db.refresh(new_sub)
     return{"message": "subscribed successfully"}
+
+@router.delete("/subscriptions/{subscription_id}")
+def delete_subscription(subscription_id: int, user_id: int = Depends(get_current_user_id), db: Session = Depends(get_db)):
+    subscription = db.query(subscription).filter(
+        Subscription.id == subscription_id,
+        Subscription.user_id == user_id
+    ).first()
+
+    if not sub:
+        raise HTTPException(status_code=404, detail="Subscription not found")
+    db.delete(subscription)
+    db.commit()
+    return{"message": "unsubscribed successfully"}

@@ -200,8 +200,8 @@ RocketLaunch.Live API
 - [✅] `POST /auth/register` — user signup
 - [✅] `POST /auth/login` — user login (JWT)
 - [✅] `GET /launches` — list upcoming launches
-- [ ] `POST /subscriptions` — subscribe to a launch or agency
-- [ ] `DELETE /subscriptions/:id` — unsubscribe
+- [✅] `POST /subscriptions` — subscribe to a launch or agency
+- [✅] `DELETE /subscriptions/:id` — unsubscribe
 
 #### 2.4 Notification Service (Node.js + SendGrid)
 - [ ] Initialize Node.js project with Express
