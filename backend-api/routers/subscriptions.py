@@ -71,7 +71,7 @@ def delete_subscription(subscription_id: int, user_id: int = Depends(get_current
         Subscription.user_id == user_id
     ).first()
 
-    if not sub:
+    if not subscription:
         raise HTTPException(status_code=404, detail="Subscription not found")
     db.delete(subscription)
     db.commit()

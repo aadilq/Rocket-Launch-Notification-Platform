@@ -204,7 +204,7 @@ RocketLaunch.Live API
 - [✅] `DELETE /subscriptions/:id` — unsubscribe
 
 #### 2.4 Notification Service (Node.js + SendGrid)
-- [ ] Initialize Node.js project with Express
+- [✅] Initialize Node.js project with Express
 - [ ] Integrate SendGrid SDK
 - [ ] Build email templates: T-24hr alert, T-1hr alert, status change alert
 - [ ] Consume RabbitMQ events and trigger appropriate email
