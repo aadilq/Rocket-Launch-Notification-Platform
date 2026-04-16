@@ -1,4 +1,14 @@
 services:
+  notification-service:
+    build: ./notification-service
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - RABBITMQ_URL=${RABBITMQ_URL}
+      - SENDGRID_API_KEY=${SENDGRID_API_KEY}
+      - SENDGRID_FROM_EMAIL=${SENDGRID_FROM_EMAIL}
+    depends_on:
+      - postgres
+      - rabbitmq
   ingestion-service:
     build: ./ingestion-service
     environment:

@@ -208,8 +208,8 @@ RocketLaunch.Live API
 - [✅] Integrate SendGrid SDK
 - [✅] Build email templates: T-24hr alert, T-1hr alert, status change alert
 - [✅] Consume RabbitMQ events and trigger appropriate email
-- [ ] Write `Dockerfile` for notification-service
-- [ ] Add to `docker-compose.yml`
+- [✅] Write `Dockerfile` for notification-service
+- [✅] Add to `docker-compose.yml`
 
 #### 2.5 Frontend — Core UI
 - [ ] Fetch and display upcoming launches from backend API
