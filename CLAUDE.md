@@ -207,7 +207,7 @@ RocketLaunch.Live API
 - [✅] Initialize Node.js project with Express
 - [✅] Integrate SendGrid SDK
 - [✅] Build email templates: T-24hr alert, T-1hr alert, status change alert
-- [ ] Consume RabbitMQ events and trigger appropriate email
+- [✅] Consume RabbitMQ events and trigger appropriate email
 - [ ] Write `Dockerfile` for notification-service
 - [ ] Add to `docker-compose.yml`
 
@@ -242,26 +242,7 @@ RocketLaunch.Live API
 
 ---
 
-### Phase 4 — Jenkins CI/CD
-
-#### 4.1 Jenkins Setup
-- [ ] Run Jenkins locally via Docker
-- [ ] Install required plugins: Docker Pipeline, GitHub, Kubernetes CLI
-
-#### 4.2 Jenkinsfile Pipeline
-- [ ] Write `Jenkinsfile` with stages: `Build` → `Test` → `Push` → `Deploy`
-- [ ] Build Docker images for all services
-- [ ] Run basic tests (FastAPI test client, Jest for frontend)
-- [ ] Push images to Docker Hub
-- [ ] Apply updated K8s manifests to minikube
-
-#### 4.3 GitHub Webhook
-- [ ] Configure GitHub webhook to trigger Jenkins on every push to `main`
-- [ ] Verify pipeline runs end-to-end automatically
-
----
-
-### Phase 5 — Polish
+### Phase 4 — Polish
 - [ ] Launch countdown timers on dashboard (live, client-side)
 - [ ] Notification history/log page per user
 - [ ] UI cleanup — loading states, error handling, responsive layout
