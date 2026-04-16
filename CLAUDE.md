@@ -205,8 +205,8 @@ RocketLaunch.Live API
 
 #### 2.4 Notification Service (Node.js + SendGrid)
 - [✅] Initialize Node.js project with Express
-- [ ] Integrate SendGrid SDK
-- [ ] Build email templates: T-24hr alert, T-1hr alert, status change alert
+- [✅] Integrate SendGrid SDK
+- [✅] Build email templates: T-24hr alert, T-1hr alert, status change alert
 - [ ] Consume RabbitMQ events and trigger appropriate email
 - [ ] Write `Dockerfile` for notification-service
 - [ ] Add to `docker-compose.yml`
