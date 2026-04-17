@@ -212,7 +212,7 @@ RocketLaunch.Live API
 - [✅] Add to `docker-compose.yml`
 
 #### 2.5 Frontend — Core UI
-- [ ] Fetch and display upcoming launches from backend API
+- [✅] Fetch and display upcoming launches from backend API
 - [ ] Implement user signup/login forms with JWT storage
 - [ ] Add subscribe/unsubscribe buttons per launch
 - [ ] Show user's active subscriptions

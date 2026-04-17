@@ -1,28 +1,27 @@
-  const launches = [
-    {
-      id: 1,
-      name: "Falcon 9 | Starlink Group 6-10",
-      agency: "SpaceX",
-      status: "Go",
-      net: "2025-06-15T14:30:00Z",
-    },
-    {
-      id: 2,
-      name: "Vulcan Centaur | Dream Chaser",
-      agency: "United Launch Alliance",
-      status: "TBD",
-      net: "2025-07-01T09:00:00Z",
-    },
-    {
-      id: 3,
-      name: "Ariane 6 | Galileo",
-      agency: "ESA",
-      status: "Hold",
-      net: "2025-07-20T06:45:00Z",
-    },
-  ]
+import { useState, useEffect } from "react";
+
 
   function Launches() {
+    const [launches, setLaunches] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null)
+
+    useEffect(()=> {
+      fetch("/api/launches")
+      .then(res => res.json())
+      .then(data => {
+        setLaunches(data)
+        setLoading(false)
+      })
+      .catch(()=>{
+        setError("Failed to load launches")
+        setLoading(false)
+      })
+    }, [])
+    if(loading) return <div className="min-h-screen bg-gray-950 text-white flex items-center justify-center">
+      loading launches...
+    </div>
+    if(error) return <div className="min-h-screen bg-gray-950 text-red-500 flex items-center justify-center">{error}</div>
     return (
       <div className="min-h-screen bg-gray-950 text-white px-12 py-16">
         <h1 className="text-4xl font-bold mb-8">Upcoming Launches</h1>

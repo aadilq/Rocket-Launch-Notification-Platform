@@ -7,7 +7,7 @@ router = APIRouter()
 
 @router.get("/launches")
 def get_launches(db: Session = Depends(get_db)):
-    launches = db.query(Launch).order_by(Launch.net.asc.all())
+    launches = db.query(Launch).order_by(Launch.net.asc()).all()
 
     return [
         {
