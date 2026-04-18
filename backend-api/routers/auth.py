@@ -5,7 +5,7 @@ from models import User
 from passlib.context import CryptContext
 from jose import jwt
 from pydantic import BaseModel
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import os
 
 router = APIRouter()
@@ -28,13 +28,13 @@ class LoginRequest(BaseModel):
 
 def create_access_token(data: dict):
     data_to_encode = data.copy()
-    expire = datetime.utc()+ timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+    expire = datetime.now(timezone.utc) + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     data_to_encode.update({"exp": expire})
-    return jwt.encode(data_to_encode, SECRET_KEY, algorithms=ALGORITHM)
+    return jwt.encode(data_to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
 @router.post("/auth/register")
 def register(request: RegisterRequest, db: Session = Depends(get_db)):
-    existing_user = db.query().filter(User.email == request.email).first()
+    existing_user = db.query(User).filter(User.email == request.email).first()
     if existing_user:
         raise HTTPException(status_code=400, detail="Email already registered")
     

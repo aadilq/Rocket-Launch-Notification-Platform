@@ -9,6 +9,7 @@
           <Link to="/" className="hover:text-blue-400">Home</Link>
           <Link to="/launches" className="hover:text-blue-400">Launches</Link>     
           <Link to="/subscribe" className="hover:text-blue-400">Subscribe</Link>
+          <Link to='/login' className="hover:text-blue-400">Login</Link>
         </div>                                                                     
       </nav>      
     )                                                                              
