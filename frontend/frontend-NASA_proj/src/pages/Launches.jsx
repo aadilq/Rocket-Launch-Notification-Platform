@@ -29,7 +29,7 @@ import { useState, useEffect } from "react"
         headers: { "Authorization": `Bearer ${token}` }
       })                                                                        
         .then(res => res.json())
-        .then(data => setSubscriptions(data))                                   
+        .then(data => setSubscriptions(Array.isArray(data) ? data : []))                                   
         .catch(() => {})
     }, [token])                                                                 
                   
@@ -55,7 +55,7 @@ import { useState, useEffect } from "react"
           "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify({ launch_id: launchId, notify_email: true,
-  notify_sms: false })                                                          
+  notify_phone: false })                                                          
       })
                                                                                 
       if (res.ok) {                                                             

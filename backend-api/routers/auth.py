@@ -60,6 +60,6 @@ def login(request: LoginRequest, db: Session = Depends(get_db)):
         raise HTTPException(status_code=401, detail="Invalid email or password")
     
     token = create_access_token({"sub": str(user.id)})
-    return {"access token": token, "token_type": "bearer"}
+    return {"access_token": token, "token_type": "bearer"}
 
 

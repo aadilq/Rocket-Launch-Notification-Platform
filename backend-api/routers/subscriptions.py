@@ -18,7 +18,7 @@ class SubscriptionRequest(BaseModel):
     launch_id: int | None = None
     agency: str | None = None
     notify_email: bool | None = True
-    notify_sms: bool = False
+    notify_phone: bool = False
 
 def get_current_user_id(token: str = Depends(oauth2_scheme)):
     try:
@@ -57,7 +57,7 @@ def create_subscription(request: SubscriptionRequest, user_id: int = Depends(get
         launch_id=request.launch_id,
         agency=request.agency,
         notify_email=request.notify_email,
-        notify_sms=request.notify_sms
+        notify_phone=request.notify_phone
     )
     db.add(new_sub)
     db.commit()
@@ -66,7 +66,7 @@ def create_subscription(request: SubscriptionRequest, user_id: int = Depends(get
 
 @router.delete("/subscriptions/{subscription_id}")
 def delete_subscription(subscription_id: int, user_id: int = Depends(get_current_user_id), db: Session = Depends(get_db)):
-    subscription = db.query(subscription).filter(
+    subscription = db.query(Subscription).filter(
         Subscription.id == subscription_id,
         Subscription.user_id == user_id
     ).first()
