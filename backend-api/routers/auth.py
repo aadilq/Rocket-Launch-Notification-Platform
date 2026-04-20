@@ -3,10 +3,11 @@ from sqlalchemy.orm import Session
 from database import get_db
 from models import User
 from passlib.context import CryptContext
-from jose import jwt
+from jose import jwt, JWTError
 from pydantic import BaseModel
 from datetime import datetime, timedelta, timezone
 import os
+from fastapi.security import OAuth2PasswordBearer
 
 router = APIRouter()
 
@@ -15,6 +16,8 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto") ##Handles pass
 SECRET_KEY = os.getenv("SECRET_KEY", "supersecretkey")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
 class RegisterRequest(BaseModel):
     name: str
@@ -63,3 +66,19 @@ def login(request: LoginRequest, db: Session = Depends(get_db)):
     return {"access_token": token, "token_type": "bearer"}
 
 
+@router.get("/auth/me")                                                       
+def get_me(token: str = Depends(oauth2_scheme), db: Session =               
+  Depends(get_db)):                                                             
+      try:
+          payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])       
+          user_id = payload.get("sub")                                        
+          if not user_id:
+              raise HTTPException(status_code=401, detail="Invalid token")
+      except JWTError:                                                          
+          raise HTTPException(status_code=401, detail="Invalid token")
+                                                                                
+      user = db.query(User).filter(User.id == int(user_id)).first()             
+      if not user:
+          raise HTTPException(status_code=404, detail="User not found")         
+                                                                              
+      return {"id": user.id, "name": user.name, "email": user.email}  

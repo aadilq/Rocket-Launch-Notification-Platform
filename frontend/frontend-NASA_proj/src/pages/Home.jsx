@@ -2,7 +2,7 @@ function Home(){
     return(
         <div className="min-h-screen bg-gray-950 text-white">
             <section className="flex flex-col items-center justify-center text-center py-32 px-6">
-                <h1 className="text-5xl font-bold mb-4">Rocket Launch Tracker</h1>
+                <h1 className="text-5xl font-bold mb-4">Rocketify</h1>
                 <p className="text-gray-400 text-lg mb-4">
                     Subscribe to upcoming Rocket Launches and get notified of the moment that something changes.
                 </p>
