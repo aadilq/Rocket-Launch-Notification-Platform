@@ -222,7 +222,7 @@ RocketLaunch.Live API
 ### Phase 3 — Kubernetes
 
 #### 3.1 Minikube Setup
-- [ ] Install and start minikube
+- [✅] Install and start minikube
 - [ ] Configure `kubectl` to point to minikube cluster
 - [ ] Enable Ingress addon (`minikube addons enable ingress`)
 
