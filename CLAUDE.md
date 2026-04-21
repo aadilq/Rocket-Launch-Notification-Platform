@@ -227,7 +227,7 @@ RocketLaunch.Live API
 - [✅] Enable Ingress addon (`minikube addons enable ingress`)
 
 #### 3.2 K8s Manifests
-- [ ] Write `Deployment` + `Service` manifest for each service (frontend, backend-api, notification-service, ingestion-service, api-gateway)
+- [✅] Write `Deployment` + `Service` manifest for each service (frontend, backend-api, notification-service, ingestion-service, api-gateway)
 - [ ] Write `Deployment` + `Service` for PostgreSQL and RabbitMQ
 - [ ] Write `Ingress` manifest to replace Nginx routing
 
