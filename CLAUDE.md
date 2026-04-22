@@ -228,12 +228,12 @@ RocketLaunch.Live API
 
 #### 3.2 K8s Manifests
 - [✅] Write `Deployment` + `Service` manifest for each service (frontend, backend-api, notification-service, ingestion-service, api-gateway)
-- [ ] Write `Deployment` + `Service` for PostgreSQL and RabbitMQ
-- [ ] Write `Ingress` manifest to replace Nginx routing
+- [] Write `Deployment` + `Service` for PostgreSQL and RabbitMQ
+- [✅] Write `Ingress` manifest to replace Nginx routing
 
 #### 3.3 ConfigMaps & Secrets
-- [ ] Move environment variables to `ConfigMap` (non-sensitive: API URLs, queue names)
-- [ ] Move credentials to `Secret` (DB password, SendGrid API key, JWT secret)
+- [✅] Move environment variables to `ConfigMap` (non-sensitive: API URLs, queue names)
+- [✅] Move credentials to `Secret` (DB password, SendGrid API key, JWT secret)
 
 #### 3.4 Deploy & Verify
 - [ ] Apply all manifests (`kubectl apply -f k8s/`)
