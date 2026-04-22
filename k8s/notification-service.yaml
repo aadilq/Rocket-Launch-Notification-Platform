@@ -14,7 +14,7 @@
       spec:
         containers:
           - name: notification-service
-            image: your-dockerhub-username/notification-service:latest
+            image: aq150/notification-service:latest
             env:                                                                
               - name: DATABASE_URL
                 valueFrom:                                                      
