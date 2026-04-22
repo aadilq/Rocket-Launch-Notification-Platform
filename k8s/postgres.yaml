@@ -53,14 +53,14 @@
       - port: 5432                                                              
         targetPort: 5432
 
-  ---
-  apiVersion: v1
-  kind: PersistentVolumeClaim
-  metadata:
-    name: postgres-pvc
-  spec:
-    accessModes:
-      - ReadWriteOnce
-    resources:                                                                  
-      requests:
-        storage: 1Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:                                                                  
+    requests:
+      storage: 1Gi
