@@ -2,15 +2,14 @@
   import { useNavigate } from "react-router-dom"                                
                                                                                 
   function Subscribe() {  
-                                                          
+    console.log("Subscribe component rendered")
+    console.log("token:", localStorage.getItem("token"))                    
     const [subscriptions, setSubscriptions] = useState([])                    
     const [launches, setLaunches] = useState([])
     const [loading, setLoading] = useState(true)                                
     const navigate = useNavigate()
                                                                                 
     const token = localStorage.getItem("token")                                 
-    console.log("Subscribe component rendered")
-    console.log("token:", localStorage.getItem("token"))   
     useEffect(() => {                                                           
       if (!token) {
         navigate("/login")

@@ -35,10 +35,12 @@ import { Link, useNavigate } from "react-router-dom";
           <Link to="/subscribe" className="hover:text-blue-400">Subscribe</Link>
           {username ? (
             <>
-            <span className="text-gray-300">Hi, {username}</span>
+            <span className="text-gray-300">{username}</span>
             <button 
             onClick={handleLogout}
-            className="bg-red-600 hover:bg-red-700 text-white text-sm font-semibold py-1 px-4 rounded-lg"></button>
+            className="bg-red-600 hover:bg-red-700 text-white text-sm font-semibold py-1 px-4 rounded-lg">
+              Sign Out
+            </button>
             </>
           ) : (<Link to='/login' className="hover:text-blue-400">Login</Link>)}
         </div>                                                                     

@@ -236,8 +236,8 @@ RocketLaunch.Live API
 - [✅] Move credentials to `Secret` (DB password, SendGrid API key, JWT secret)
 
 #### 3.4 Deploy & Verify
-- [ ] Apply all manifests (`kubectl apply -f k8s/`)
-- [ ] Verify all pods are running (`kubectl get pods`)
+- [✅] Apply all manifests (`kubectl apply -f k8s/`)
+- [✅] Verify all pods are running (`kubectl get pods`)
 - [ ] Test end-to-end flow through the Ingress
 
 ---
