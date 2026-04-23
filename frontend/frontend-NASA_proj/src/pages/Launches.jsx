@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"                                   
-  import { useNavigate } from "react-router-dom"                                
+import { useNavigate } from "react-router-dom"  
+import Countdown from "../../components/Countdown" 
+
                                                                                 
   function Launches() {                                                         
     const [launches, setLaunches] = useState([])                                
@@ -97,7 +99,9 @@ import { useState, useEffect } from "react"
               <div>                                                             
                 <h2 className="text-xl font-semibold">{launch.name}</h2>
                 <p className="text-gray-400 mt-1">{launch.agency}</p>           
-                <p className="text-gray-400 text-sm mt-1">NET: {launch.net}</p>
+                <p className="text-gray-400 text-sm mt-1">NET: {new                           
+  Date(launch.net).toLocaleDateString()}</p>
+  <Countdown net={launch.net} />
               </div>                                                            
               <div className="flex flex-col items-end gap-3">
                 <span className={`text-sm font-semibold px-3 py-1 rounded-full  
