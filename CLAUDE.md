@@ -243,7 +243,7 @@ RocketLaunch.Live API
 ---
 
 ### Phase 4 — Polish
-- [ ] Launch countdown timers on dashboard (live, client-side)
+- [] Launch countdown timers on dashboard (live, client-side)
 - [ ] UI cleanup — loading states, error handling, responsive layout
 
 ---

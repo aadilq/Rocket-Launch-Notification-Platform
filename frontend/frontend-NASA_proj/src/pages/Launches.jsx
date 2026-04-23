@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"                                   
 import { useNavigate } from "react-router-dom"  
 import Countdown from "../../components/Countdown" 
+import { authFetch } from "../utils/api"
+
 
                                                                                 
   function Launches() {                                                         
@@ -13,7 +15,7 @@ import Countdown from "../../components/Countdown"
     const token = localStorage.getItem("token")                                 
    
     useEffect(() => {                                                           
-      fetch("/api/launches")
+      authFetch("/api/launches")
         .then(res => res.json())
         .then(data => {
           setLaunches(data)
@@ -27,7 +29,7 @@ import Countdown from "../../components/Countdown"
 
     useEffect(() => {
       if (!token) return
-      fetch("/api/subscriptions", {                                             
+      authFetch("/api/subscriptions", {                                             
         headers: { "Authorization": `Bearer ${token}` }
       })                                                                        
         .then(res => res.json())
@@ -50,7 +52,7 @@ import Countdown from "../../components/Countdown"
         return    
       }
 
-      const res = await fetch("/api/subscriptions", {                           
+      const res = await authFetch("/api/subscriptions", {                           
         method: "POST",
         headers: {                                                              
           "Content-Type": "application/json",
@@ -61,7 +63,7 @@ import Countdown from "../../components/Countdown"
       })
                                                                                 
       if (res.ok) {                                                             
-        const updated = await fetch("/api/subscriptions", {
+        const updated = await authFetch("/api/subscriptions", {
           headers: { "Authorization": `Bearer ${token}` }                       
         })        
         const data = await updated.json()                                       
@@ -73,7 +75,7 @@ import Countdown from "../../components/Countdown"
       const subId = getSubscriptionId(launchId)
       if (!subId) return                                                        
    
-      const res = await fetch(`/api/subscriptions/${subId}`, {                  
+      const res = await authFetch(`/api/subscriptions/${subId}`, {                  
         method: "DELETE",
         headers: { "Authorization": `Bearer ${token}` }                         
       })
