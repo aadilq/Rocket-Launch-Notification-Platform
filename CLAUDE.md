@@ -238,12 +238,36 @@ RocketLaunch.Live API
 #### 3.4 Deploy & Verify
 - [✅] Apply all manifests (`kubectl apply -f k8s/`)
 - [✅] Verify all pods are running (`kubectl get pods`)
-- [ ] Test end-to-end flow through the Ingress
+- [✅] Test end-to-end flow through the Ingress
 
 ---
 
 ### Phase 4 — Polish
 - [ ] Launch countdown timers on dashboard (live, client-side)
-- [ ] Notification history/log page per user
 - [ ] UI cleanup — loading states, error handling, responsive layout
+
+---
+
+### Phase 5 — Production Deployment (Railway)
+
+#### 5.1 Railway Setup
+- [ ] Create Railway account
+- [ ] Install Railway CLI
+- [ ] Create new Railway project
+
+#### 5.2 Deploy Services
+- [ ] Deploy PostgreSQL as a Railway managed database
+- [ ] Deploy RabbitMQ as a Railway service
+- [ ] Deploy backend-api, ingestion-service, notification-service
+- [ ] Deploy frontend
+
+#### 5.3 Configure Environment
+- [ ] Set environment variables in Railway dashboard
+- [ ] Update service URLs to point to Railway endpoints
+- [ ] Verify all services can communicate
+
+#### 5.4 Verify & Launch
+- [ ] Test end-to-end flow on Railway
+- [ ] Confirm emails are being sent via SendGrid
+- [ ] Share the public URL
 
