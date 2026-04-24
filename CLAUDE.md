@@ -255,7 +255,7 @@ RocketLaunch.Live API
 - [✅] Create new Railway project
 
 #### 5.2 Deploy Services
-- [] Deploy PostgreSQL as a Railway managed database
+- [✅] Deploy PostgreSQL as a Railway managed database
 - [ ] Deploy RabbitMQ as a Railway service
 - [ ] Deploy backend-api, ingestion-service, notification-service
 - [ ] Deploy frontend
