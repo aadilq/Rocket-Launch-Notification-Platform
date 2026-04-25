@@ -4,6 +4,9 @@ from database import SessionLocal
 from models import Launch
 from publisher import publish_event
 from datetime import datetime, timezone
+import threading
+import os
+from http.server import HTTPServer, BaseHTTPRequestHandler
 
 def check_launches():
     print("Polling the Space Devs API...")
@@ -62,6 +65,20 @@ def check_launches():
                         })
     finally:
         db.close()
+
+class HealthHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b"ok")
+    def log_message(self, format, *args):
+        pass
+
+def run_health_server():
+    port = int(os.environ.get("PORT", 8080))
+    HTTPServer(("0.0.0.0", port), HealthHandler).serve_forever()
+
+threading.Thread(target=run_health_server, daemon=True).start()
 
 scheduler = BlockingScheduler()
 scheduler.add_job(check_launches, 'interval', minutes=15)
