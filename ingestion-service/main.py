@@ -81,7 +81,7 @@ def run_health_server():
 threading.Thread(target=run_health_server, daemon=True).start()
 
 scheduler = BlockingScheduler()
-scheduler.add_job(check_launches, 'interval', minutes=15)
+scheduler.add_job(check_launches, 'interval', minutes=15, next_run_time=datetime.now(timezone.utc))
 print("Ingestion service started. Polling every 15 minutes")
 scheduler.start()
 
