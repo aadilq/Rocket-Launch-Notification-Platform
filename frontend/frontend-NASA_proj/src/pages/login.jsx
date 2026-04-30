@@ -1,5 +1,6 @@
   import { useState } from "react"                                              
   import { useNavigate } from "react-router-dom"
+  import { BASE_URL } from "../utils/api"
                                                                                 
   function Login() {
     const [isLogin, setIsLogin] = useState(true)                                
@@ -12,8 +13,8 @@
     async function handleSubmit(e) {
       e.preventDefault()
       setError(null)
-                                                                                
-      const url = isLogin ? "/api/auth/login" : "/api/auth/register"
+                                                                               
+      const url = isLogin ? `${BASE_URL}/auth/login` : `${BASE_URL}/auth/register`
       const body = isLogin                                                      
         ? { email, password }                                                   
         : { name, email, password }

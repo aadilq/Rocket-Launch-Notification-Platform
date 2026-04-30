@@ -1,6 +1,6 @@
   import { useState, useEffect } from "react"                                   
   import { useNavigate } from "react-router-dom" 
-  import { authFetch } from "../utils/api"                               
+  import { authFetch, BASE_URL } from "../utils/api"                               
                                                                                 
   function Subscribe() {  
     console.log("Subscribe component rendered")
@@ -18,10 +18,10 @@
       }
 
       Promise.all([                                                             
-        authFetch("/api/subscriptions", {
+        authFetch(`${BASE_URL}/subscriptions`, {
           headers: { "Authorization": `Bearer ${token}` }                       
         }).then(res => res.json()),
-        authFetch("/api/launches").then(res => res.json())
+        authFetch(`${BASE_URL}/launches`).then(res => res.json())
       ]).then(([subsData, launchesData]) => {  
         console.log("subscriptions:", subsData)                                   
         console.log("launches:", launchesData)                                 
@@ -44,7 +44,7 @@
     async function handleUnsubscribe(subId) {
 
       const token = localStorage.getItem("token")                                 
-      const res = await authFetch(`/api/subscriptions/${subId}`, {
+      const res = await authFetch(`${BASE_URL}/subscriptions/${subId}`, {
         method: "DELETE",                                                       
         headers: { "Authorization": `Bearer ${token}` }
       })                                                                        

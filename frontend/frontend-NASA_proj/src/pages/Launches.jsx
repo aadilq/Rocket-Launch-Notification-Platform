@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"                                   
 import { useNavigate } from "react-router-dom"  
 import Countdown from "../../components/Countdown" 
-import { authFetch } from "../utils/api"
+import { authFetch, BASE_URL } from "../utils/api"
 
 
                                                                                 
@@ -15,7 +15,7 @@ import { authFetch } from "../utils/api"
     const token = localStorage.getItem("token")                                 
    
     useEffect(() => {                                                           
-      authFetch("/api/launches")
+      authFetch(`${BASE_URL}/launches`)
         .then(res => res.json())
         .then(data => {
           setLaunches(data)
@@ -29,7 +29,7 @@ import { authFetch } from "../utils/api"
 
     useEffect(() => {
       if (!token) return
-      authFetch("/api/subscriptions", {                                             
+      authFetch(`${BASE_URL}/subscriptions`, {                                             
         headers: { "Authorization": `Bearer ${token}` }
       })                                                                        
         .then(res => res.json())
@@ -52,7 +52,7 @@ import { authFetch } from "../utils/api"
         return    
       }
 
-      const res = await authFetch("/api/subscriptions", {                           
+      const res = await authFetch(`${BASE_URL}/subscriptions`, {                           
         method: "POST",
         headers: {                                                              
           "Content-Type": "application/json",
@@ -63,7 +63,7 @@ import { authFetch } from "../utils/api"
       })
                                                                                 
       if (res.ok) {                                                             
-        const updated = await authFetch("/api/subscriptions", {
+        const updated = await authFetch(`${BASE_URL}/subscriptions`, {
           headers: { "Authorization": `Bearer ${token}` }                       
         })        
         const data = await updated.json()                                       
@@ -75,7 +75,7 @@ import { authFetch } from "../utils/api"
       const subId = getSubscriptionId(launchId)
       if (!subId) return                                                        
    
-      const res = await authFetch(`/api/subscriptions/${subId}`, {                  
+      const res = await authFetch(`${BASE_URL}/subscriptions/${subId}`, {                  
         method: "DELETE",
         headers: { "Authorization": `Bearer ${token}` }                         
       })

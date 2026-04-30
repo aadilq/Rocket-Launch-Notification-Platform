@@ -8,7 +8,7 @@ app = FastAPI()
 
 origins = [
     "http://localhost:5173",
-    "https://backend-api-production-6528.up.railway.app"
+    "https://rocket-launch-notification-platform-9ij51xnrf-aadilqs-projects.vercel.app"
 ]
 
 
