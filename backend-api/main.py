@@ -7,8 +7,9 @@ from routers import auth, launches, subscriptions
 app = FastAPI()
 
 origins = [
+    "http://localhost",
     "http://localhost:5173",
-    "https://rocket-launch-notification-platform-9ij51xnrf-aadilqs-projects.vercel.app"
+    "https://rocket-launch-notification-platform.vercel.app"
 ]
 
 
