@@ -13,7 +13,7 @@ def publish_event(event):
     channel.basic_publish(
         exchange="",
         routing_key="launch_events", 
-        body=json.dump(event),
+        body=json.dumps(event),
         properties=pika.BasicProperties(
             delivery_mode=2
         )

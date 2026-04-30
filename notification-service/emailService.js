@@ -37,7 +37,7 @@ function buildEmailContent(event) {
           text: content.text
       }
 
-      await sgMail.send(msg);
+      await sgmail.send(msg);
       console.log(`Email sent to ${toEmail} for event ${event.event_type} - 
   ${event.launch_name}`);
   }
