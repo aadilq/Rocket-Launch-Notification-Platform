@@ -38,7 +38,7 @@ def check_launches():
                         "status" : existing.status
                     })
                 if launch_data["net"]:
-                    net = datetime.fromisoformat(launch_data["net"]).replace("Z", "+00:00")
+                    net = datetime.fromisoformat(launch_data["net"].replace("Z", "+00:00"))
 
                     now = datetime.now(timezone.utc)
 
@@ -47,7 +47,7 @@ def check_launches():
                     if 23.5 <= hours_until <= 24.5:
                         publish_event({
                             "launch_id" : existing.external_id, 
-                             "event_type" : "T-MINUS_24HR",
+                             "event_type" : "T_MINUS_24HR",
                              "launch_name" : existing.name,
                              "agency" : existing.agency, 
                              "net" : str(existing.net),
@@ -57,7 +57,7 @@ def check_launches():
                     if 0.5 <= hours_until <= 1.5:
                         publish_event({
                             "launch_id" : existing.external_id, 
-                             "event_type" : "T-MINUS_1HR",
+                             "event_type" : "T_MINUS_1HR",
                              "launch_name" : existing.name,
                              "agency" : existing.agency, 
                              "net" : str(existing.net),
