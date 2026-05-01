@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function Home(){
     return(
         <div className="min-h-screen bg-gray-950 text-white">
@@ -6,7 +8,9 @@ function Home(){
                 <p className="text-gray-400 text-lg mb-4">
                     Subscribe to upcoming Rocket Launches and get notified of the moment that something changes.
                 </p>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg">Browse Launches</button>
+                <Link to="/launches" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg inline-block">
+                    Browse Launches
+                </Link>
             </section>
 
             {/* {Features Section} */}
