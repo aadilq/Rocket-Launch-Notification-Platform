@@ -9,7 +9,8 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:5173",
-    "https://rocket-launch-notification-platform.vercel.app"
+    "https://rocket-launch-notification-platform.vercel.app",
+    "https://rocketlaunch-backend-api.onrender.com"
 ]
 
 
