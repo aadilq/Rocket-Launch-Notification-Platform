@@ -43,12 +43,11 @@ const { sendNotificationEmail } = require('./emailService');
                   
           try {                                                                 
               const result = await pool.query(
-                  `SELECT u.email FROM users u                                  
+                  `SELECT u.email FROM users u
                    JOIN subscriptions s ON s.user_id = u.id
-                   WHERE s.launch_id = (                                        
+                   WHERE (s.launch_id = (
                        SELECT id FROM launches WHERE external_id = $1
-                   )                                                            
-                   OR s.agency = $2
+                   ) OR s.agency = $2)
                    AND s.notify_email = true`,                                  
                   [event.launch_id, event.agency]
               );                                                                
